@@ -1,0 +1,33 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Streamlit cache
+.streamlit/
+
+# Jupyter / IPython
+.ipynb_checkpoints
+
+# Logs and misc
+*.log
+.DS_Store
+
+# Python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
