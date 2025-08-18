@@ -49,6 +49,31 @@ It is designed as both an educational tool and a lightweight sandbox for explori
 
 ---
 
+## How Synthetic RF Signals Are Generated
+
+The simulator generates synthetic radio frequency (RF) signals by combining basic waveforms and noise sources:
+
+- **Baseband Signal Construction**  
+  A clean sinusoidal carrier is created using NumPy (`sin(2πft)`), with user-defined frequency, amplitude, and duration.
+
+- **Noise Injection**  
+  Gaussian (white) noise is added using `numpy.random.normal` to approximate real-world thermal noise.
+
+- **Doppler Shift Simulation**  
+  Frequency shifts are applied by dynamically modifying the carrier frequency over time.  
+  - Manual mode: constant shift specified by the user.  
+  - Satellite/LEO preset: time-varying shift approximating orbital motion.
+
+- **Filtering**  
+  Frequency-domain filters (low-pass, high-pass, band-pass) are applied using SciPy’s signal processing functions (`butter`, `lfilter`) to mimic receiver chain effects.
+
+- **Composite Signals**  
+  Multiple sinusoids and noise sources can be summed to simulate realistic interference, jamming, or multipath.
+
+This provides a sandbox that mimics real-world RF conditions while remaining fully synthetic, reproducible, and lightweight.
+
+---
+
 ## Usage & Explanation
 
 The dashboard allows you to configure RF signals and visualize how they behave. Below are the key components explained:
