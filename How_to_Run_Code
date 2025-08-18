@@ -1,0 +1,38 @@
+## Run from ZIP (no Git required)
+
+Follow these steps if you are viewing this repository on GitHub and want to run the app locally without using Git.
+
+### 1) Download and extract
+1. Click the green **Code** button at the top of this repo.
+2. Click **Download ZIP**.
+3. Unzip the file. You should get a folder that contains:
+   - `app.py`
+   - `rf_simulation.py`
+   - `requirements.txt`
+
+### 2) Open a terminal in the project folder
+- macOS or Linux: open Terminal, then `cd` into the unzipped folder.
+- Windows: open PowerShell, then `cd` into the unzipped folder.
+
+Example:
+```bash
+cd path/to/unzipped/folder
+
+---
+
+**MacOS or Linux**
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+
+**Windows (PowerShell)**
+py -m venv venv
+venv\Scripts\Activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+---
+
+**Run this code at the end to launch the app**
+python -m streamlit run app.py
